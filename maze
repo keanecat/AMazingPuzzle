@@ -1,0 +1,85 @@
+import java.util.ArrayList;
+
+
+public class maze {  
+	int maze [][];
+	
+	maze  () { 
+		//produce 10*10 size, later make it larger , mmm.. say 50*50? 
+		maze=new  int[10][10];  
+	for (int i=0;i<10;i++)   {      
+		for (int j=0;j<10;j++)      
+			maze[i][j]=1;   
+		}   
+	}
+
+
+
+
+public void  produceMaze()   
+{       
+maze[0][1]=maze[1][1]=0;           //entry     
+	maze[9][8]=0;            //exit             
+	//random generator      
+	for (int i=1;i<9;i++)   {              
+		for (int k=1;k<9;k++)      
+		{     
+			int ran    ;     
+			ran=(int)(Math.random()*3)+1;        
+			if(ran%3==0||ran%3==1)    
+				maze[i][k]=0;    
+			}
+		}
+
+
+//working on this dfs maze generator at the moment
+/*
+	//start at a random cells
+	int random_cell_x = (int)(Math.random()*3*3)+1;
+	int random_cell_y = (int)(Math.random()*3*3)+1;
+	
+	//visited
+	maze[random_cell_x][random_cell_x] = 0;
+	
+	
+	//Mark the current cell as visited, and get a list of its neighbors. 
+	//For each neighbor, starting with a randomly selected neighbor:
+		//If that neighbor hasn't been visited, remove the wall between this cell and that neighbor,
+		//and then recurse with that neighbor as the current cell.
+	ArrayList<Integer> al = new ArrayList<Integer>();	
+
+	while(maze[random_cell_x][random_cell_x] != 0){
+		al.add(random_cell_x++);
+		al.add(random_cell_x--);
+		al.add(random_cell_y++);
+		al.add(random_cell_y--);
+	
+		al.get((int)(Math.random()*3));
+		
+		
+		
+
+	}
+	
+
+	
+}
+
+public void printMaze()           
+{     
+	for(int i=0;i<10;i++) 
+	{    
+		for(int j=0;j<10;j++){
+			if (maze[i][j]==1)   
+				//cell
+				System.out.print("#");      
+			else if(maze[i][j]==0) 
+				//space
+				System.out.print(" "); 
+		
+		}
+		System.out.println();
+
+	}
+	}
+}
