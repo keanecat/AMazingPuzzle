@@ -63,7 +63,7 @@ maze[0][1]=maze[1][1]=0;           //entry
 	}
 	
 
-	
+*/	
 }
 
 public void printMaze()           
