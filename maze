@@ -18,6 +18,7 @@ public class maze {
 
 public void  produceMaze()   
 {       
+//this just for temp
 maze[0][1]=maze[1][1]=0;           //entry     
 	maze[9][8]=0;            //exit             
 	//random generator      
